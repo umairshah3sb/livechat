@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-Color blue = Color.fromARGB(255, 58, 16, 228);
-Color blueLight = Color.fromARGB(255, 114, 72, 251);
+Color orange = Color(0xffe46b10);
+Color orangeLight = Color(0xfffbb448);
 Color black = Colors.black;
