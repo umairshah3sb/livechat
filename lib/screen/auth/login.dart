@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:livechat/screen/auth/register.dart';
 import 'package:livechat/utils/colors.dart';
 import 'package:livechat/widget/bezierContainer.dart';
+import 'package:livechat/widget/title_widget.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key, this.title}) : super(key: key);
@@ -190,31 +191,11 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               'Register',
               style: TextStyle(
-                  color: blue, fontSize: 13, fontWeight: FontWeight.w600),
+                  color: orange, fontSize: 13, fontWeight: FontWeight.w600),
             ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _title() {
-    return RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(
-          text: 'Code',
-          style:
-              TextStyle(fontSize: 30, fontWeight: FontWeight.w700, color: blue),
-          children: [
-            TextSpan(
-              text: 'Pi',
-              style: TextStyle(color: Colors.black, fontSize: 30),
-            ),
-            TextSpan(
-              text: 'e',
-              style: TextStyle(color: blue, fontSize: 30),
-            ),
-          ]),
     );
   }
 
@@ -247,7 +228,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(height: height * .2),
-                  _title(),
+                  TitleWidget(),
                   SizedBox(height: 50),
                   _emailPasswordWidget(),
                   SizedBox(height: 20),
@@ -267,7 +248,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          Positioned(top: 40, left: 0, child: _backButton()),
         ],
       ),
     ));

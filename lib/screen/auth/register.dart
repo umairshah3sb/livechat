@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:livechat/screen/auth/login.dart';
 import 'package:livechat/utils/colors.dart';
 import 'package:livechat/widget/bezierContainer.dart';
+import 'package:livechat/widget/title_widget.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key? key, this.title}) : super(key: key);
@@ -88,7 +89,7 @@ class _SignUpPageState extends State<SignUpPage> {
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [blue, blueLight])),
+              colors: [orange, orangeLight])),
       child: Text(
         'Register Now',
         style: TextStyle(fontSize: 20, color: Colors.white),
@@ -119,31 +120,11 @@ class _SignUpPageState extends State<SignUpPage> {
             Text(
               'Login',
               style: TextStyle(
-                  color: blue, fontSize: 13, fontWeight: FontWeight.w600),
+                  color: orange, fontSize: 13, fontWeight: FontWeight.w600),
             ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _title() {
-    return RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(
-          text: 'Code',
-          style:
-              TextStyle(fontSize: 30, fontWeight: FontWeight.w700, color: blue),
-          children: [
-            TextSpan(
-              text: 'Pi',
-              style: TextStyle(color: Colors.black, fontSize: 30),
-            ),
-            TextSpan(
-              text: 'e',
-              style: TextStyle(color: blue, fontSize: 30),
-            ),
-          ]),
     );
   }
 
@@ -162,7 +143,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: height,
         child: Stack(
           children: <Widget>[
@@ -179,22 +160,21 @@ class _SignUpPageState extends State<SignUpPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(height: height * .2),
-                    _title(),
+                    TitleWidget(),
                     SizedBox(
-                      height: 50,
+                      height: 70,
                     ),
                     _emailPasswordWidget(),
                     SizedBox(
                       height: 20,
                     ),
                     _submitButton(),
-                    SizedBox(height: height * .14),
+                    SizedBox(height: height * .08),
                     _loginAccountLabel(),
                   ],
                 ),
               ),
             ),
-            Positioned(top: 40, left: 0, child: _backButton()),
           ],
         ),
       ),
